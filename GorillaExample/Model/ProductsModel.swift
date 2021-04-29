@@ -13,6 +13,7 @@ struct ProductsModel: Codable{
     var price: String?
     var bg_color: String?
     var type: String?
+    var numberProductos: Int = 0
 
     private enum CodingKeys: String, CodingKey {
         case name1

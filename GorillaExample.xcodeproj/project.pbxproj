@@ -23,6 +23,7 @@
 		5BAD4CD2263AF27000315093 /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CD1263AF27000315093 /* ProductsModel.swift */; };
 		5BAD4CD6263AFDB200315093 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CD4263AFDB200315093 /* ItemCollectionViewCell.swift */; };
 		5BAD4CD7263AFDB200315093 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD4CD5263AFDB200315093 /* ItemCollectionViewCell.xib */; };
+		5BAD4CDB263B20FD00315093 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CDA263B20FD00315093 /* UIColor+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		5BAD4CD1263AF27000315093 /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
 		5BAD4CD4263AFDB200315093 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		5BAD4CD5263AFDB200315093 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		5BAD4CDA263B20FD00315093 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		5BAD4CAD263ADA5500315093 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5BAD4CD9263B20E900315093 /* Extensions */,
 				5BAD4CAE263ADA6A00315093 /* Screens */,
 			);
 			path = Presentation;
@@ -159,6 +162,14 @@
 				5BAD4CD1263AF27000315093 /* ProductsModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5BAD4CD9263B20E900315093 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5BAD4CDA263B20FD00315093 /* UIColor+extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +255,7 @@
 				5BAD4C9D263AD87000315093 /* ViewController.swift in Sources */,
 				5BAD4C99263AD87000315093 /* AppDelegate.swift in Sources */,
 				5BAD4C9B263AD87000315093 /* SceneDelegate.swift in Sources */,
+				5BAD4CDB263B20FD00315093 /* UIColor+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ import Combine
 class ViewController: BaseViewController {
 
     @IBOutlet var collectionView: UICollectionView!
+    var listItems: [ProductsModel] = []
     lazy var viewModel: MainViewModel = {
         return MainViewModel()
     }()
@@ -18,6 +19,18 @@ class ViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical //.horizontal
+        layout.minimumLineSpacing = 3
+        layout.minimumInteritemSpacing = 3
+        collectionView.setCollectionViewLayout(layout, animated: true)
+        
+        
+        self.collectionView.collectionViewLayout = layout
+        self.collectionView.register(ItemCollectionViewCell.nib(), forCellWithReuseIdentifier: ItemCollectionViewCell.identifier)
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         self.bind()
     }
     
@@ -43,6 +56,11 @@ class ViewController: BaseViewController {
     }
     
     func renderListCategory(_ products: [ProductsModel]) {
+        listItems = products
+        DispatchQueue.main.async {
+            self.collectionView.reloadData();
+        }
+
        print(products)
     }
 
@@ -51,18 +69,34 @@ class ViewController: BaseViewController {
 extension ViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCollectionViewCell.identifier, for: indexPath) as! ItemCollectionViewCell
+        if self.listItems[indexPath.row].numberProductos == 2 {
+            self.listItems[indexPath.row].numberProductos = 0
+        }else {
+            self.listItems[indexPath.row].numberProductos += 1
+        }
         
-        print("tap")
+        let item = self.listItems[indexPath.row]
+        DispatchQueue.main.async {
+            cell.configure(with: (UIImage(named: item.type ?? "froyo") ??  UIImage(named: "froyo"))!  , price: item.price ?? "", color: UIColor(hexString: item.bg_color ?? ""), name: item.name1 ?? "" , width: self.view.frame.width/2, numItems: item.numberProductos)
+            collectionView.reloadItems(at: [ indexPath ]  )
+            
+        }
+        
+        
     }
 }
 
 extension ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return self.listItems.count - 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCollectionViewCell.identifier, for: indexPath) as! ItemCollectionViewCell
+        let item = listItems[indexPath.row]
+        
+        cell.configure(with: (UIImage(named: item.type ?? "froyo") ??  UIImage(named: "froyo"))!  , price: item.price ?? "", color: UIColor(hexString: item.bg_color ?? ""), name: item.name1 ?? "" , width: self.view.frame.width/2, numItems: item.numberProductos)
         return cell
     }
     
@@ -70,5 +104,17 @@ extension ViewController: UICollectionViewDataSource{
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)//here your custom value for spacing
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let lay = collectionViewLayout as! UICollectionViewFlowLayout
+        let widthPerItem = collectionView.frame.width / 2 - lay.minimumInteritemSpacing
+        
+        return CGSize(width:widthPerItem, height:227)
+    }
+    
     
 }
