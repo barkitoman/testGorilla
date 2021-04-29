@@ -13,6 +13,16 @@
 		5BAD4CA0263AD87000315093 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD4C9E263AD87000315093 /* Main.storyboard */; };
 		5BAD4CA2263AD87300315093 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD4CA1263AD87300315093 /* Assets.xcassets */; };
 		5BAD4CA5263AD87300315093 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD4CA3263AD87300315093 /* LaunchScreen.storyboard */; };
+		5BAD4CB3263AE34D00315093 /* DetailOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CB2263AE34D00315093 /* DetailOrderViewController.swift */; };
+		5BAD4CB7263AE36A00315093 /* DetailOrderViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD4CB6263AE36A00315093 /* DetailOrderViewController.storyboard */; };
+		5BAD4CBB263AE6E200315093 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CBA263AE6E200315093 /* BaseViewController.swift */; };
+		5BAD4CC1263AF0CE00315093 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CC0263AF0CE00315093 /* NetworkServices.swift */; };
+		5BAD4CC5263AF13000315093 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CC4263AF13000315093 /* MainViewModel.swift */; };
+		5BAD4CC8263AF15F00315093 /* ProductsDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CC7263AF15F00315093 /* ProductsDataSourceImpl.swift */; };
+		5BAD4CCC263AF1B500315093 /* ProductsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CCB263AF1B500315093 /* ProductsDataSource.swift */; };
+		5BAD4CD2263AF27000315093 /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CD1263AF27000315093 /* ProductsModel.swift */; };
+		5BAD4CD6263AFDB200315093 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CD4263AFDB200315093 /* ItemCollectionViewCell.swift */; };
+		5BAD4CD7263AFDB200315093 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD4CD5263AFDB200315093 /* ItemCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		5BAD4CA1263AD87300315093 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BAD4CA4263AD87300315093 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BAD4CA6263AD87300315093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BAD4CB2263AE34D00315093 /* DetailOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOrderViewController.swift; sourceTree = "<group>"; };
+		5BAD4CB6263AE36A00315093 /* DetailOrderViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailOrderViewController.storyboard; sourceTree = "<group>"; };
+		5BAD4CBA263AE6E200315093 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5BAD4CC0263AF0CE00315093 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		5BAD4CC4263AF13000315093 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		5BAD4CC7263AF15F00315093 /* ProductsDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDataSourceImpl.swift; sourceTree = "<group>"; };
+		5BAD4CCB263AF1B500315093 /* ProductsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDataSource.swift; sourceTree = "<group>"; };
+		5BAD4CD1263AF27000315093 /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
+		5BAD4CD4263AFDB200315093 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		5BAD4CD5263AFDB200315093 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +76,89 @@
 		5BAD4C97263AD87000315093 /* GorillaExample */ = {
 			isa = PBXGroup;
 			children = (
+				5BAD4CD0263AF25C00315093 /* Model */,
+				5BAD4CBF263AF0B500315093 /* Helpers */,
+				5BAD4CAF263ADA9200315093 /* DataSource */,
+				5BAD4CAD263ADA5500315093 /* Presentation */,
 				5BAD4C98263AD87000315093 /* AppDelegate.swift */,
 				5BAD4C9A263AD87000315093 /* SceneDelegate.swift */,
-				5BAD4C9C263AD87000315093 /* ViewController.swift */,
-				5BAD4C9E263AD87000315093 /* Main.storyboard */,
 				5BAD4CA1263AD87300315093 /* Assets.xcassets */,
 				5BAD4CA3263AD87300315093 /* LaunchScreen.storyboard */,
 				5BAD4CA6263AD87300315093 /* Info.plist */,
 			);
 			path = GorillaExample;
+			sourceTree = "<group>";
+		};
+		5BAD4CAD263ADA5500315093 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5BAD4CAE263ADA6A00315093 /* Screens */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5BAD4CAE263ADA6A00315093 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5BAD4CB9263AE6C200315093 /* Base */,
+				5BAD4CB1263AE32F00315093 /* DetailOrder */,
+				5BAD4CB0263AE31F00315093 /* Main */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		5BAD4CAF263ADA9200315093 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5BAD4CC7263AF15F00315093 /* ProductsDataSourceImpl.swift */,
+				5BAD4CCB263AF1B500315093 /* ProductsDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5BAD4CB0263AE31F00315093 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5BAD4C9E263AD87000315093 /* Main.storyboard */,
+				5BAD4C9C263AD87000315093 /* ViewController.swift */,
+				5BAD4CC4263AF13000315093 /* MainViewModel.swift */,
+				5BAD4CD4263AFDB200315093 /* ItemCollectionViewCell.swift */,
+				5BAD4CD5263AFDB200315093 /* ItemCollectionViewCell.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5BAD4CB1263AE32F00315093 /* DetailOrder */ = {
+			isa = PBXGroup;
+			children = (
+				5BAD4CB2263AE34D00315093 /* DetailOrderViewController.swift */,
+				5BAD4CB6263AE36A00315093 /* DetailOrderViewController.storyboard */,
+			);
+			path = DetailOrder;
+			sourceTree = "<group>";
+		};
+		5BAD4CB9263AE6C200315093 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5BAD4CBA263AE6E200315093 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5BAD4CBF263AF0B500315093 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5BAD4CC0263AF0CE00315093 /* NetworkServices.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5BAD4CD0263AF25C00315093 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BAD4CD1263AF27000315093 /* ProductsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +219,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BAD4CA5263AD87300315093 /* LaunchScreen.storyboard in Resources */,
+				5BAD4CB7263AE36A00315093 /* DetailOrderViewController.storyboard in Resources */,
+				5BAD4CD7263AFDB200315093 /* ItemCollectionViewCell.xib in Resources */,
 				5BAD4CA2263AD87300315093 /* Assets.xcassets in Resources */,
 				5BAD4CA0263AD87000315093 /* Main.storyboard in Resources */,
 			);
@@ -137,6 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAD4CC5263AF13000315093 /* MainViewModel.swift in Sources */,
+				5BAD4CD6263AFDB200315093 /* ItemCollectionViewCell.swift in Sources */,
+				5BAD4CD2263AF27000315093 /* ProductsModel.swift in Sources */,
+				5BAD4CC8263AF15F00315093 /* ProductsDataSourceImpl.swift in Sources */,
+				5BAD4CC1263AF0CE00315093 /* NetworkServices.swift in Sources */,
+				5BAD4CBB263AE6E200315093 /* BaseViewController.swift in Sources */,
+				5BAD4CCC263AF1B500315093 /* ProductsDataSource.swift in Sources */,
+				5BAD4CB3263AE34D00315093 /* DetailOrderViewController.swift in Sources */,
 				5BAD4C9D263AD87000315093 /* ViewController.swift in Sources */,
 				5BAD4C99263AD87000315093 /* AppDelegate.swift in Sources */,
 				5BAD4C9B263AD87000315093 /* SceneDelegate.swift in Sources */,
