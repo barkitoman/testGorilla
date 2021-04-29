@@ -16,7 +16,7 @@ class BaseViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.50, green: 0.82, blue: 0.83, alpha: 1.00)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//        navigationController?.navigationBar.barTintColor = UIColor.white
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {

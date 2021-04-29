@@ -9,21 +9,20 @@ import UIKit
 
 class DetailOrderViewController: UIViewController {
 
+    var itemsSelect: [ProductsModel] = []
+    
+    @IBOutlet weak var backToOrder: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.backToOrder.layer.borderWidth = 1
+        self.backToOrder.layer.borderColor = UIColor(hexString: "#117D81").cgColor
+        navigationController?.setNavigationBarHidden(true, animated: true)
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func goToOrder(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        
     }
-    */
-
+    
 }

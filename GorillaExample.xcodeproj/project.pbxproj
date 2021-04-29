@@ -24,6 +24,7 @@
 		5BAD4CD6263AFDB200315093 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CD4263AFDB200315093 /* ItemCollectionViewCell.swift */; };
 		5BAD4CD7263AFDB200315093 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BAD4CD5263AFDB200315093 /* ItemCollectionViewCell.xib */; };
 		5BAD4CDB263B20FD00315093 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CDA263B20FD00315093 /* UIColor+extensions.swift */; };
+		5BAD4CDF263B449B00315093 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD4CDE263B449B00315093 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5BAD4CD4263AFDB200315093 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		5BAD4CD5263AFDB200315093 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		5BAD4CDA263B20FD00315093 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
+		5BAD4CDE263B449B00315093 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				5BAD4CDA263B20FD00315093 /* UIColor+extensions.swift */,
+				5BAD4CDE263B449B00315093 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				5BAD4C99263AD87000315093 /* AppDelegate.swift in Sources */,
 				5BAD4C9B263AD87000315093 /* SceneDelegate.swift in Sources */,
 				5BAD4CDB263B20FD00315093 /* UIColor+extensions.swift in Sources */,
+				5BAD4CDF263B449B00315093 /* UIViewController+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

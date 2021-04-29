@@ -10,8 +10,13 @@ import Combine
 
 class ViewController: BaseViewController {
 
+    @IBOutlet weak var labelButton: UILabel!
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var viewButton: UIView!
+    
     var listItems: [ProductsModel] = []
+    var itemsSelect: [ProductsModel] = []
+    
     lazy var viewModel: MainViewModel = {
         return MainViewModel()
     }()
@@ -25,13 +30,24 @@ class ViewController: BaseViewController {
         layout.minimumLineSpacing = 3
         layout.minimumInteritemSpacing = 3
         collectionView.setCollectionViewLayout(layout, animated: true)
-        
-        
         self.collectionView.collectionViewLayout = layout
         self.collectionView.register(ItemCollectionViewCell.nib(), forCellWithReuseIdentifier: ItemCollectionViewCell.identifier)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.bind()
+        self.renderScreen()
+        
+    }
+    
+    func renderScreen () {
+        self.labelButton.text = "ORDER"
+        self.viewButton.layer.opacity = 0.5
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.renderScreen()
+        self.viewModel.action.send(.initial)
     }
     
     func bind() {
@@ -41,6 +57,19 @@ class ViewController: BaseViewController {
                 self.render(state)
             })
         ]
+    }
+    
+    func setSelectionItems(){
+        self.itemsSelect = self.listItems.filter { $0.numberProductos>0
+            
+        }
+        if self.itemsSelect.count > 0 {
+            self.labelButton.text = "ORDER \(itemsSelect.count) ITEMS"
+            self.viewButton.layer.opacity = 1
+        }else{
+            self.labelButton.text = "ORDER"
+            self.viewButton.layer.opacity = 0.5
+        }
     }
     
     private func render(_ state: MainViewModel.State) {
@@ -60,10 +89,15 @@ class ViewController: BaseViewController {
         DispatchQueue.main.async {
             self.collectionView.reloadData();
         }
-
-       print(products)
     }
-
+    @IBAction func goToOrder(_ sender: Any) {
+        if(self.itemsSelect.count>0){
+            let vc = DetailOrderViewController().instantiateViewController() as! DetailOrderViewController
+             vc.itemsSelect = self.itemsSelect
+            self.navigateToControllerInStoryboard(controller: vc,isFullScreen: true)
+        }
+    }
+    
 }
 
 extension ViewController: UICollectionViewDelegate{
@@ -80,7 +114,7 @@ extension ViewController: UICollectionViewDelegate{
         DispatchQueue.main.async {
             cell.configure(with: (UIImage(named: item.type ?? "froyo") ??  UIImage(named: "froyo"))!  , price: item.price ?? "", color: UIColor(hexString: item.bg_color ?? ""), name: item.name1 ?? "" , width: self.view.frame.width/2, numItems: item.numberProductos)
             collectionView.reloadItems(at: [ indexPath ]  )
-            
+            self.setSelectionItems()
         }
         
         

@@ -50,6 +50,12 @@
                                     <constraint firstAttribute="height" constant="60" id="YFu-ec-8db"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nv-Vg-HIk">
+                                <rect key="frame" x="0.0" y="836" width="414" height="60"/>
+                                <connections>
+                                    <action selector="goToOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VbG-L3-nKU"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YUo-RO-UWM">
                                 <rect key="frame" x="0.0" y="98" width="414" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,16 +83,22 @@
                         <constraints>
                             <constraint firstItem="iit-dV-E07" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4Ch-wM-g1t"/>
                             <constraint firstItem="iit-dV-E07" firstAttribute="top" secondItem="YUo-RO-UWM" secondAttribute="bottom" constant="10" id="4mt-TC-xcw"/>
+                            <constraint firstItem="8Nv-Vg-HIk" firstAttribute="leading" secondItem="iit-dV-E07" secondAttribute="leading" id="BeP-A5-dtv"/>
                             <constraint firstItem="YUo-RO-UWM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="STS-pk-Kbx"/>
                             <constraint firstAttribute="trailing" secondItem="YUo-RO-UWM" secondAttribute="trailing" id="TaR-h8-s0C"/>
+                            <constraint firstItem="8Nv-Vg-HIk" firstAttribute="bottom" secondItem="iit-dV-E07" secondAttribute="bottom" id="det-YS-Ljx"/>
                             <constraint firstAttribute="bottom" secondItem="iit-dV-E07" secondAttribute="bottom" id="gU1-C5-KQI"/>
                             <constraint firstItem="YUo-RO-UWM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="kiL-lV-d3x"/>
+                            <constraint firstItem="8Nv-Vg-HIk" firstAttribute="top" secondItem="iit-dV-E07" secondAttribute="top" id="nax-d5-jyb"/>
                             <constraint firstItem="iit-dV-E07" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qRj-Ma-OQU"/>
+                            <constraint firstItem="8Nv-Vg-HIk" firstAttribute="trailing" secondItem="iit-dV-E07" secondAttribute="trailing" id="tD5-qd-lg7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="WELCOME" id="hBS-Ff-xlX"/>
                     <connections>
                         <outlet property="collectionView" destination="YUo-RO-UWM" id="GGv-Se-zds"/>
+                        <outlet property="labelButton" destination="wbK-Vv-9c1" id="XAj-RO-2hF"/>
+                        <outlet property="viewButton" destination="iit-dV-E07" id="QL3-0K-Qao"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
